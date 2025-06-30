@@ -20,6 +20,13 @@ class OpenaiRunDescribeRequest(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
 
+class OpenaiRunDescribeResponse(BaseModel):
+    description: str
+    background: str
+    title: str
+    offers: list[str]
+    icon_style: str
+
 
 class OpenaiRunGenerateRequest(BaseModel):
     model: str = "gpt-image-1"
