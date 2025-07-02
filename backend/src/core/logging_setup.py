@@ -1,5 +1,5 @@
-from fastapi import FastAPI, Request, Response
 from loguru import logger
+from fastapi import FastAPI, Request, Response
 from starlette.background import BackgroundTask
 
 from src.core.config import settings

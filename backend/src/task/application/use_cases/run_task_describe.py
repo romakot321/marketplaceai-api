@@ -5,12 +5,12 @@ from uuid import UUID
 from loguru import logger
 
 from src.core.http.client import IHttpClient
-from src.integration.domain.exceptions import IntegrationRequestException
-from src.task.application.interfaces.task_runner import ITaskRunner
-from src.task.application.interfaces.task_uow import ITaskUnitOfWork
-from src.task.domain.dtos import TaskReadDTO, TaskDescribeCreateDTO, TaskResultDTO
-from src.task.domain.entities import Task, TaskDescribeRun, TaskStatus, TaskUpdate
+from src.task.domain.dtos import TaskReadDTO, TaskResultDTO, TaskDescribeCreateDTO
 from src.task.domain.mappers import IntegrationResponseToDomainMapper
+from src.task.domain.entities import Task, TaskStatus, TaskUpdate, TaskDescribeRun
+from src.integration.domain.exceptions import IntegrationRequestException
+from src.task.application.interfaces.task_uow import ITaskUnitOfWork
+from src.task.application.interfaces.task_runner import ITaskRunner
 
 
 class RunTaskDescribeUseCase:

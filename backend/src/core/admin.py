@@ -1,6 +1,6 @@
 import jwt
-from sqladmin.authentication import AuthenticationBackend
 from starlette.requests import Request
+from sqladmin.authentication import AuthenticationBackend
 
 from src.core.config import settings
 

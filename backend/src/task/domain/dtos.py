@@ -1,13 +1,13 @@
 import inspect
 from io import BytesIO
-from typing import Type
 from uuid import UUID
+from typing import Type
 
 from fastapi import Form
-from pydantic import BaseModel, HttpUrl, ConfigDict
+from pydantic import HttpUrl, BaseModel, ConfigDict
 
-from src.integration.domain.dtos import IntegrationTaskDescribeRunParamsDTO, IntegrationTaskGenerateRunParamsDTO
 from src.task.domain.entities import TaskStatus
+from src.integration.domain.dtos import IntegrationTaskDescribeRunParamsDTO, IntegrationTaskGenerateRunParamsDTO
 
 
 def as_form(cls: Type[BaseModel]):

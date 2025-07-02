@@ -1,18 +1,18 @@
-import asyncio
-import base64
 import uuid
+import base64
+import asyncio
 from io import BytesIO
 
 from openai import AsyncOpenAI, OpenAIError
 from pydantic import ValidationError
 
 from src.core.config import settings
-from src.integration.domain.dtos import IntegrationTaskResultDTO, IntegrationTaskStatus
-from src.integration.domain.exceptions import IntegrationRequestException
-from src.integration.domain.mappers import TaskRunToRequestMapper
-from src.integration.domain.schemas import OpenaiRunDescribeResponse, OpenaiRunDescribeRequest, OpenaiRunGenerateRequest
-from src.task.application.interfaces.task_runner import ITaskRunner
 from src.task.domain.entities import TaskDescribeRun, TaskGenerateRun
+from src.integration.domain.dtos import IntegrationTaskStatus, IntegrationTaskResultDTO
+from src.integration.domain.mappers import TaskRunToRequestMapper
+from src.integration.domain.schemas import OpenaiRunDescribeRequest, OpenaiRunGenerateRequest, OpenaiRunDescribeResponse
+from src.integration.domain.exceptions import IntegrationRequestException
+from src.task.application.interfaces.task_runner import ITaskRunner
 
 tasks = {}
 

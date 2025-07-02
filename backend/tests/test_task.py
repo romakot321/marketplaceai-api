@@ -108,3 +108,4 @@ async def test_task_generate_get_result(test_client: AsyncClient):
     assert resp.status_code == 200, resp.json()
     assert resp.headers["Content-Type"] == "image/jpeg"
     assert resp.read() == b"123"
+

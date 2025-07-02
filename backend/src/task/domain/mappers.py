@@ -1,6 +1,6 @@
-from src.integration.domain.dtos import IntegrationTaskResultDTO, IntegrationTaskStatus
 from src.task.domain.dtos import TaskResultDTO
 from src.task.domain.entities import TaskStatus
+from src.integration.domain.dtos import IntegrationTaskStatus, IntegrationTaskResultDTO
 
 
 class IntegrationResponseToDomainMapper:

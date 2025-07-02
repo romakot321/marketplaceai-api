@@ -5,14 +5,14 @@ from uuid import UUID
 from loguru import logger
 
 from src.core.config import settings
-from src.core.file_storage import FileStorage
 from src.core.http.client import IHttpClient
-from src.integration.domain.exceptions import IntegrationRequestException
-from src.task.application.interfaces.task_runner import ITaskRunner
-from src.task.application.interfaces.task_uow import ITaskUnitOfWork
-from src.task.domain.dtos import TaskReadDTO, TaskGenerateCreateDTO, TaskResultDTO
-from src.task.domain.entities import Task, TaskStatus, TaskUpdate, TaskGenerateRun
+from src.task.domain.dtos import TaskReadDTO, TaskResultDTO, TaskGenerateCreateDTO
+from src.core.file_storage import FileStorage
 from src.task.domain.mappers import IntegrationResponseToDomainMapper
+from src.task.domain.entities import Task, TaskStatus, TaskUpdate, TaskGenerateRun
+from src.integration.domain.exceptions import IntegrationRequestException
+from src.task.application.interfaces.task_uow import ITaskUnitOfWork
+from src.task.application.interfaces.task_runner import ITaskRunner
 
 
 class RunTaskGenerateUseCase:

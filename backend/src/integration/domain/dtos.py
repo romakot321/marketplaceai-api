@@ -1,5 +1,5 @@
-from enum import Enum
 from io import BytesIO
+from enum import Enum
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict
@@ -18,11 +18,11 @@ class IntegrationTaskDescribeRunParamsDTO(BaseModel):
 
 class IntegrationTaskGenerateRunParamsDTO(BaseModel):
     size: Literal["1024x1024", "1536x1024", "1024x1536", "auto"]
-    description: str
+    description: str | None = None
     background: str
-    title: str
-    offers: list[str]
-    icon_style: str
+    title: str | None = None
+    offers: list[str] | None = None
+    icon_style: str | None = None
 
 
 class IntegrationTaskResultDTO(BaseModel):
