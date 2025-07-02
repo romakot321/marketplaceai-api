@@ -4,4 +4,4 @@ from src.task.application.interfaces.task_runner import ITaskRunner
 
 
 def get_integration_task_runner() -> ITaskRunner:
-    return OpenaiTaskRunner(AsyncHttpClient())
+    return OpenaiTaskRunner()

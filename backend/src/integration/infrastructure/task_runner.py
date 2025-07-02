@@ -56,7 +56,7 @@ class OpenaiTaskRunner(ITaskRunner[IntegrationTaskResultDTO]):
 
     async def _image2image(self, task_id: str, request: OpenaiRunGenerateRequest):
         try:
-            result = await self.client.images.edit(**request.model_dump(exclude_none=True))
+            result = await self.client.images.edit(**request.model_dump(exclude_none=True, exclude={"image"}), image=request.image)
         except OpenAIError as e:
             self._set_task_result(task_id, IntegrationTaskStatus.failed, str(e))
             return

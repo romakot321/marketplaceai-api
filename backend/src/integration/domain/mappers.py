@@ -27,6 +27,9 @@ class TaskRunToRequestMapper:
         )
 
     def map_generate(self, task_run: TaskGenerateRun) -> OpenaiRunGenerateRequest:
+        if task_run.file is not None:
+            task_run.file.name = "tmp.png"
+
         return OpenaiRunGenerateRequest(
             image=[task_run.file] if task_run.file is not None else None,
             prompt=self._make_generate_prompt(task_run),
